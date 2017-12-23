@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.Master.cs" Inherits="masterr.Pages.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <style>
+
+       /*.back 
+       {
+           background-image: url("../Images/Main.jpg");
+           opacity:0.8;
+       }*/
+
+   </style> 
+    <title>Master</title>
+    <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../bootstrap-3.3.7-dist/jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">GYM BUDDY</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="Home.aspx">Home</a></li>
+        
+      <li><a href="About_us.aspx"> About Us</a></li>
+      <li><a href="Contact Us.aspx">Contact Us</a></li>
+      <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"> Login </span></a></li>
+    </ul>
+  </div>
+</nav>
+
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="Footer" runat="server">
+    </asp:ContentPlaceHolder>
+    
+       <div class="navbar navbar-default navbar-fixed-bottom text-center "> 
+           <p class="navbar-text"> © Copyright 2017 Abrar Iqbal All right reserved</p>
+
+       </div>
+
+
+</body>
+</html>

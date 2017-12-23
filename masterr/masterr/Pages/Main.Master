@@ -1,0 +1,277 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="masterr.Pages.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../bootstrap-3.3.7-dist/jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <style>
+
+        .navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-brand {
+  color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    /*color:rgb(153,217,234);*/
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-default .navbar-text {
+  color: #777;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #777;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color:rgb(190,221,241);
+  /*background-color: transparent;*/
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  
+  color: #555;
+  background-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color:rgb(190,221,241);
+  /*background-color: #e7e7e7;*/
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+  background-color:rgb(190,221,241);
+   /*background-color: transparent;*/
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color:rgb(190,221,241);
+   /*/*background-color: #e7e7e7;*/*/
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-default .navbar-link {
+  color: #777;
+}
+.navbar-default .navbar-link:hover {
+  color: #333;
+}
+.navbar-default .btn-link {
+  color: #777;
+}
+.navbar-default .btn-link:hover,
+.navbar-default .btn-link:focus {
+  color: #333;
+}
+.navbar-default .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-default .btn-link:hover,
+.navbar-default .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-default .btn-link:focus {
+  color: #ccc;
+}
+
+
+
+
+
+
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+          <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="Dashboard.aspx">GYM BUDDY</a>
+    </div>
+    <ul class="nav navbar-nav">
+
+
+
+      <li><asp:LinkButton CssClass="dropdown" ID="Member_" runat="server" data-toggle="dropdown">Member</asp:LinkButton>
+          <ul class="dropdown-menu">
+          <li><asp:LinkButton ID="Add_Member" runat="server" OnClick="Add_">Add Member</asp:LinkButton></li>
+          <li><asp:LinkButton ID="View_Members" runat="server" OnClick="View_Click">View Members</asp:LinkButton></li>
+          </ul>
+      </li>
+        <li>
+            <asp:LinkButton CssClass="dropdown" ID="Instructor" runat="server" data-toggle="dropdown">Instructor</asp:LinkButton>
+            <ul class="dropdown-menu">
+                <li><asp:LinkButton ID="Add_Instructor" runat="server" OnClick="Add_Ins">Add Instructor</asp:LinkButton></li>
+                      <li><asp:LinkButton ID="View_Instructors" runat="server" OnClick="View_Ins_Click">View Instructors</asp:LinkButton></li>
+            </ul>
+        </li>
+
+      <li><asp:LinkButton CssClass="dropdown" ID="Exercise" runat="server" data-toggle="dropdown">Exercise</asp:LinkButton>
+          <ul class="dropdown-menu">
+              <li><asp:LinkButton ID="Add_Exercise" runat="server" OnClick="Add_EX">Add Exercise</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="View_Exercise" runat="server" OnClick="View_E_Click">View Exercise</asp:LinkButton></li>
+
+          </ul>
+
+      </li>
+        
+      <li><asp:LinkButton CssClass="dropdown" ID="Diet" runat="server" data-toggle="dropdown">Diet</asp:LinkButton>
+          <ul class="dropdown-menu">
+            
+             <li> <asp:LinkButton ID="Add_Diet" runat="server" OnClick="Add_D">Add Diet</asp:LinkButton></li>
+             <li><asp:LinkButton ID="View_Diet" runat="server" OnClick="View_D_Click">View Diet</asp:LinkButton></li>
+          </ul>
+
+      </li>
+
+              <li><asp:LinkButton CssClass="dropdown" ID="Class_" runat="server" data-toggle="dropdown">Class</asp:LinkButton>
+          <ul class="dropdown-menu">
+            
+             <li>
+                 <asp:LinkButton ID="Add_Class" runat="server" OnClick="Add_C">Add Class</asp:LinkButton></li>
+             <li><asp:LinkButton ID="View_Class" runat="server" OnClick="View_C">View Class</asp:LinkButton></li>
+
+          </ul>
+
+      </li>
+
+        <li><asp:LinkButton CssClass="dropdown" ID="Plann" runat="server" data-toggle="dropdown">Plan</asp:LinkButton>
+          <ul class="dropdown-menu">
+            
+             <li><asp:LinkButton ID="Add_Exercise_P" CssClass="dropdown" runat="server" OnClick="General_Click">Add General Exercise Plan</asp:LinkButton></li>
+              <li><asp:LinkButton ID="Exercise_Specific_P" runat="server" OnClick="Specific_Click">Add Specific Exercise Plan</asp:LinkButton></li>
+              <li><asp:LinkButton ID="Add_diet_P" runat="server" OnClick="General_D_Plan">Add General Diet Plan</asp:LinkButton></li>
+            <li><asp:LinkButton ID="Diet_Specific_P" runat="server" OnClick="Specific_D_Plan">Add Specific Diet Plan</asp:LinkButton></li>             
+            <li><asp:LinkButton ID="View_Exercise_P" runat="server" OnClick="View_Ex_Click">View Exercise Plan</asp:LinkButton></li>  
+               <li><asp:LinkButton ID="View_diet_P" runat="server" OnClick="View_Di_Click">View Diet Plan</asp:LinkButton></li>
+          </ul>
+
+      </li>
+
+        <li><asp:LinkButton CssClass="dropdown" ID="Targets" runat="server" data-toggle="dropdown">Target</asp:LinkButton>
+          <ul class="dropdown-menu">
+            
+             <li>
+                 <asp:LinkButton ID="Set_Target" runat="server" OnClick="S_Target_Click">Set Target</asp:LinkButton></li>
+             <li><asp:LinkButton ID="View_Target" runat="server" OnClick="V_Target_Click">View Target</asp:LinkButton></li>
+
+          </ul>
+
+      </li>
+        <li><asp:LinkButton CssClass="dropdown" ID="pays" runat="server" data-toggle="dropdown">Payment</asp:LinkButton>
+          <ul class="dropdown-menu">
+            
+             <li>
+                 <asp:LinkButton ID="Add_payment" runat="server" OnClick="A_Pay_Click">Add Payment</asp:LinkButton></li>
+             <li><asp:LinkButton ID="View_payment" runat="server" OnClick="V_Pay_Click">View payment</asp:LinkButton></li>
+
+          </ul>
+
+      </li>
+
+        <li><asp:LinkButton CssClass="dropdown" ID="Payment" runat="server" data-toggle="dropdown">Salary</asp:LinkButton>
+          <ul class="dropdown-menu">
+              
+              <li><asp:LinkButton ID="Add_Salary" runat="server" OnClick="Ad_Sal_Click">Add Salary</asp:LinkButton></li>
+              <li><asp:LinkButton ID="View_Salary" runat="server" OnClick="V_Sal_Click">View Salary</asp:LinkButton></li>
+
+          </ul>
+
+      </li>
+
+
+      <li><asp:LinkButton CssClass="dropdown" ID="Notifications" runat="server" data-toggle="dropdown">Notifications</asp:LinkButton>
+          <ul class="dropdown-menu">
+              <li><asp:LinkButton ID="Add_Notification" runat="server" OnClick="Add_N">Add Notification</asp:LinkButton></li>
+                 <li><asp:LinkButton ID="View_Notification" runat="server" OnClick="View_N_Click">View Notification</asp:LinkButton></li>
+
+              
+
+          </ul>
+
+      </li>
+
+
+              <li><asp:LinkButton CssClass="dropdown" ID="Medical_History" runat="server" data-toggle="dropdown">Medical History</asp:LinkButton>
+          <ul class="dropdown-menu">
+              <li><asp:LinkButton ID="View_MD_A" runat="server" OnClick="View_M_Click">View Medical History</asp:LinkButton></li>
+                 <li><asp:LinkButton ID="View_MD_I" runat="server" OnClick="View_MI_Click">View Medical History</asp:LinkButton></li>
+
+              
+
+          </ul>
+
+      </li>
+
+        <li><asp:LinkButton CssClass="dropdown" ID="Chat_Box" runat="server" OnClick="Chat_Click">Chat Box</asp:LinkButton></li>
+        
+     
+        <li><asp:LinkButton ID="logout" runat="server" OnClick="logout_Click">Logout</asp:LinkButton> </li>
+        
+        </ul>
+  </div>
+</nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+      
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    <asp:ContentPlaceHolder ID="Footer" runat="server">
+        
+    </asp:ContentPlaceHolder>
+
+    <div class="navbar navbar-default navbar-fixed-bottom text-center "> 
+           <p class="navbar-text"> © Copyright 2017 Abrar Iqbal All right reserved</p>
+
+       </div>
+</body>
+</html>
